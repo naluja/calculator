@@ -1,0 +1,81 @@
+/* 
+#### Backgrounds
+
+- Very dark violet (main background): hsl(268, 75%, 9%)
+- Very dark violet (toggle background, keypad background, screen background): hsl(268, 71%, 12%)
+
+#### Keys
+
+- Dark violet (key background): hsl(281, 89%, 26%)
+- Vivid magenta (key shadow): hsl(285, 91%, 52%)
+
+- Pure cyan (key background, toggle): hsl(176, 100%, 44%)
+- Soft cyan (key shadow): hsl(177, 92%, 70%)
+
+- Very dark violet (key background): hsl(268, 47%, 21%)
+- Dark magenta (key shadow): hsl(290, 70%, 36%)
+
+#### Text
+
+- Light yellow: hsl(52, 100%, 62%)
+- Very dark blue: hsl(198, 20%, 13%)
+- White (text): hsl(0, 0%, 100%) */
+
+
+body {
+
+	background-color: hsl(268, 75%, 9%);
+}
+.calculator .top {
+	color: hsl(52, 100%, 62%);
+}
+.calculator .top .slider::before {
+	color: hsl(52, 100%, 62%);
+}
+.calculator .top .slider {
+	background-color: hsl(268, 71%, 12%);
+}
+.calculator .top .slider::-webkit-slider-thumb {
+	background: hsl(25, 98%, 40%);
+}
+.calculator .display {
+	background-color: hsl(268, 71%, 12%);
+	color: hsl(52, 100%, 62%);
+}
+
+.calculator .keypad {
+	background-color:  hsl(268, 71%, 12%);
+}
+.calculator .keypad button {
+	color: hsl(52, 100%, 62%);
+}
+.calculator .keypad .digit,
+.calculator .keypad .operator {
+	border-bottom: 4px solid hsl(290, 70%, 36%);
+	background-color: hsl(268, 47%, 21%);
+}
+.calculator .keypad .del,
+.calculator .keypad .reset {
+	background-color:  hsl(281, 89%, 26%) ;
+	color: white;
+	border-bottom: 4px solid hsl(285, 91%, 52%);
+}
+
+.calculator .keypad .equal {
+	background-color: hsl(176, 100%, 44%);
+	color: white;
+
+	border-bottom: 4px solid hsl(177, 92%, 70%);
+}
+
+.calculator .keypad .digit:hover,
+.calculator .keypad .operator:hover {
+	background-color: hsl(281, 89%, 26%);
+}
+.calculator .keypad .reset:hover,
+.calculator .keypad .del:hover {
+	background-color: hsl(285, 71%, 57%);
+}
+.calculator .keypad .equal:hover {
+	background-color: hsl(177, 88%, 74%);
+} /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,151 @@
+@use "colors" as *;
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	font-family: "League Spartan", sans-serif;
+}
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background-color: $backgroundColor;
+	font-size: 32px;
+}
+.calculator {
+	height: 800px;
+	width: 350px;
+	.top {
+		padding: 30px 20px;
+		display: flex;
+		justify-content: space-between;
+		color: white;
+		.slide-container {
+			width: 80px;
+		}
+		.numbers {
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			font-size: 0.8rem;
+			padding: 0 10px;
+			margin-bottom: 5px;
+		}
+
+		.slider::before {
+			content: "theme";
+			text-transform: uppercase;
+			position: absolute;
+			right: 100px;
+			top: 10px;
+			color: white;
+			letter-spacing: 0.1rem;
+		}
+		.slider {
+			width: 100%;
+			background-color: $toggleKeypadBgc;
+			position: relative;
+			-webkit-appearance: none;
+			appearance: none;
+			height: 25px;
+			-webkit-transition: 0.2s;
+			transition: opacity 0.2s;
+			border-radius: 20px;
+			padding: 5px;
+		}
+		.slider::-webkit-slider-thumb {
+			-webkit-appearance: none;
+			appearance: none;
+			width: 15px;
+			height: 15px;
+			border-radius: 50%;
+			background: $keyEqualandToggle;
+			cursor: pointer;
+		}
+	}
+	.display {
+		width: 90%;
+		background-color: $screenBgc;
+		padding: 30px;
+		margin: auto;
+		border-radius: 10px;
+		text-align: end;
+		color: white;
+		font-size: 2.5rem;
+		margin-bottom: 20px;
+		height: 160px;
+		.previous-number {
+			font-size: 2rem;
+			font-weight: normal;
+		}
+		.math-sign {
+			font-size: 2rem;
+			font-weight: normal;
+		}
+	}
+	.keypad {
+		width: 90%;
+		margin: auto;
+		border-radius: 10px;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-auto-rows: 60px;
+		column-gap: 15px;
+		row-gap: 15px;
+		background-color: $toggleKeypadBgc;
+		padding: 20px;
+		button {
+			border-radius: 5px;
+			border: none;
+			font-size: 32px;
+			font-weight: 700;
+			color: $keyText;
+			transition: all 0.3s;
+		}
+		.digit,
+		.operator {
+			border-bottom: 4px solid $keyMainShadow;
+			background-color: $keyMainBgc;
+		}
+		.del,
+		.reset {
+			background-color: $keyResetBgc;
+			color: white;
+			text-transform: uppercase;
+			font-size: 1.2rem;
+			border-bottom: 4px solid $backgroundColor;
+		}
+		.reset {
+			grid-column-start: 1;
+			grid-column-end: 3;
+		}
+		.equal {
+			background-color: $keyEqualandToggle;
+			color: white;
+			font-size: 1.2rem;
+			border-bottom: 4px solid $keyEqualShadow;
+			grid-column-start: 3;
+			grid-column-end: 5;
+		}
+		button:hover {
+			cursor: pointer;
+		}
+		.digit:hover,
+		.operator:hover {
+			background-color: $white;
+		}
+		.reset:hover,
+		.del:hover {
+			background-color: hsl(225, 53%, 71%);
+		}
+		.equal:hover {
+			background-color: hsl(6, 96%, 62%);
+		}
+	}
+}
+@media screen and (min-width: 800px) {
+	.calculator {
+		width: 500px;
+	}
+}
